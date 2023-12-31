@@ -1,0 +1,88 @@
+{
+  "cities": [
+    {
+      "cityName": "Delhi",
+      "country": "India",
+      "emoji": "🇮🇳",
+      "date": "2023-12-22T10:24:21.015Z",
+      "notes": "Hello",
+      "position": {
+        "lat": "28.612963399439717",
+        "lng": "77.2063838918526"
+      },
+      "id": 1
+    },
+    {
+      "cityName": "Mangalore",
+      "country": "India",
+      "emoji": "🇮🇳",
+      "date": "2023-12-22T10:25:14.459Z",
+      "notes": "College",
+      "position": {
+        "lat": "12.869818164867556",
+        "lng": "74.84272955718556"
+      },
+      "id": 2
+    },
+    {
+      "cityName": "Canberra",
+      "country": "Australia",
+      "emoji": "🇦🇺",
+      "date": "2023-12-22T10:27:37.514Z",
+      "notes": "",
+      "position": {
+        "lat": "-35.30448804416203",
+        "lng": "149.16130799610906"
+      },
+      "id": 4
+    },
+    {
+      "cityName": "Wellington",
+      "country": "New Zealand",
+      "emoji": "🇳🇿",
+      "date": "2023-12-22T10:27:50.581Z",
+      "notes": "",
+      "position": {
+        "lat": "-41.30952250696035",
+        "lng": "174.803406630672"
+      },
+      "id": 5
+    },
+    {
+      "cityName": "Kandy",
+      "country": "Sri Lanka",
+      "emoji": "🇱🇰",
+      "date": "2023-12-22T14:02:04.121Z",
+      "notes": "Good trip",
+      "position": {
+        "lat": "7.328325748718189",
+        "lng": "80.77146595113241"
+      },
+      "id": 6
+    },
+    {
+      "cityName": "Washington",
+      "country": "United States of America (the)",
+      "emoji": "🇺🇸",
+      "date": "2023-12-23T16:15:45.665Z",
+      "notes": "jnonoinn",
+      "position": {
+        "lat": "38.7880600033523",
+        "lng": "-76.98850716405381"
+      },
+      "id": 7
+    },
+    {
+      "cityName": "Paris",
+      "country": "France",
+      "emoji": "🇫🇷",
+      "date": "2023-12-24T13:18:22.812Z",
+      "notes": "dtrdrtfytft",
+      "position": {
+        "lat": "48.84298765098674",
+        "lng": "2.3510742187500004"
+      },
+      "id": 8
+    }
+  ]
+}
