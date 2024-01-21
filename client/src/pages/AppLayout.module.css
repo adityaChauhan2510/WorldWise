@@ -1,0 +1,7 @@
+.app {
+  height: 100dvh;
+  padding: 2.4rem;  
+  display: flex;
+  position: relative;
+  /* overflow-x: scroll; */
+}

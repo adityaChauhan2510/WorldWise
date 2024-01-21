@@ -1,0 +1,40 @@
+{
+  "cities": [
+    {
+      "cityName": "Delhi",
+      "country": "India",
+      "emoji": "🇮🇳",
+      "date": "2023-12-22T10:24:21.015Z",
+      "notes": "Hello",
+      "position": {
+        "lat": "28.612963399439717",
+        "lng": "77.2063838918526"
+      },
+      "id": 1
+    },
+    {
+      "cityName": "Mangalore",
+      "country": "India",
+      "emoji": "🇮🇳",
+      "date": "2023-12-22T10:25:14.459Z",
+      "notes": "College",
+      "position": {
+        "lat": "12.869818164867556",
+        "lng": "74.84272955718556"
+      },
+      "id": 2
+    },
+    {
+      "cityName": "Wellington",
+      "country": "New Zealand",
+      "emoji": "🇳🇿",
+      "date": "2023-12-22T10:27:50.581Z",
+      "notes": "",
+      "position": {
+        "lat": "-41.30952250696035",
+        "lng": "174.803406630672"
+      },
+      "id": 5
+    }
+  ]
+}
