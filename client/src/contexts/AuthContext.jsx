@@ -65,7 +65,7 @@ function AuthProvider({ children }) {
         avatar: data.pic,
       };
 
-      console.log(data);
+      //console.log(data);
       console.log("Login successful");
       dispatch({ type: "login", payload: USER });
     } catch (err) {
@@ -94,7 +94,7 @@ function AuthProvider({ children }) {
         avatar: data.pic,
       };
 
-      console.log(data);
+      //console.log(data);
       console.log("Signup successful");
       dispatch({ type: "signup", payload: USER });
     } catch (err) {

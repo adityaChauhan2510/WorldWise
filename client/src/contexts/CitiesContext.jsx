@@ -78,7 +78,6 @@ function CitiesProvider({ children }) {
 
     try {
       const token = localStorage.getItem("token");
-
       const { data } = await axios.get(`${URI}/api/cities`, {
         headers: {
           "Content-Type": "application/json",
@@ -86,8 +85,7 @@ function CitiesProvider({ children }) {
         },
       });
 
-      console.log(data);
-
+      //console.log(data);
       dispatch({ type: "cities/loaded", payload: data });
     } catch (err) {
       console.error("Error fetching cities:", err);
@@ -99,7 +97,7 @@ function CitiesProvider({ children }) {
   }
 
   async function getCity(id) {
-    if (Number(id) === currentCity.id) return;
+    if (Number(id) === currentCity._id) return;
 
     dispatch({ type: "loading" });
     try {
@@ -112,8 +110,8 @@ function CitiesProvider({ children }) {
         },
       });
 
-      const data = await res.json();
-      console.log(data);
+      const data = res.data;
+      //console.log(data);
 
       dispatch({ type: "city/loaded", payload: data });
     } catch {
@@ -126,15 +124,16 @@ function CitiesProvider({ children }) {
 
   async function createCity(newCity) {
     dispatch({ type: "loading" });
+
     try {
-      const res = await fetch(`${BASE_URL}/cities`, {
-        method: "POST",
-        body: JSON.stringify(newCity),
+      const token = localStorage.getItem("token");
+      const res = await axios.post(`${URI}/api/cities`, newCity, {
         headers: {
           "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
         },
       });
-      const data = await res.json();
+      const data = res.data;
       dispatch({ type: "city/created", payload: data });
     } catch {
       dispatch({
@@ -147,8 +146,12 @@ function CitiesProvider({ children }) {
   async function deleteCity(id) {
     dispatch({ type: "loading" });
     try {
-      await fetch(`${BASE_URL}/cities/${id}`, {
-        method: "DELETE",
+      const token = localStorage.getItem("token");
+      await axios.delete(`${URI}/api/cities/${id}`, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
       });
 
       dispatch({ type: "city/deleted", payload: id });

@@ -10,7 +10,6 @@ const citySchema = new mongoose.Schema({
     lat: String,
     lng: String,
   },
-  id: Number,
 });
 
 const userSchema = mongoose.Schema(
