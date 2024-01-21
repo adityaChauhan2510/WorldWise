@@ -49,9 +49,10 @@ Landing Page
 <br>
 
 Login/Signup Page
-![Uploading Screenshot 2024-01-21 202343.png…]()
-![Uploading Screenshot 2024-01-21 202354.png…]()
-![Uploading Screenshot 2024-01-21 202425.png…]()
+<img width="960" alt="Screenshot 2024-01-21 202343" src="https://github.com/adityaChauhan2510/WorldWise/assets/118456135/b2216963-c2b0-411a-948b-a0629fe62e8c">
+<img width="949" alt="Screenshot 2024-01-21 202354" src="https://github.com/adityaChauhan2510/WorldWise/assets/118456135/f0e58b47-8289-494a-b969-1d889f9f9817">
+<img width="959" alt="Screenshot 2024-01-21 202425" src="https://github.com/adityaChauhan2510/WorldWise/assets/118456135/f517c580-63a3-4618-8cdd-a64c103c6a56">
+
 <br>
 
 Home Page
