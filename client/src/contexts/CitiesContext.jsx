@@ -7,7 +7,7 @@ import {
 } from "react";
 import axios from "axios";
 
-const URI = "http://localhost:9000";
+const URI = "https://worldwise-backend-rwp5.onrender.com";
 
 const CitiesContext = createContext();
 
