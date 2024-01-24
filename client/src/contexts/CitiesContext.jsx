@@ -51,7 +51,7 @@ function reducer(state, action) {
       return {
         ...state,
         isLoading: false,
-        cities: state.cities.filter((city) => city.id !== action.payload),
+        cities: action.payload,
         currentCity: {},
       };
 
@@ -73,28 +73,32 @@ function CitiesProvider({ children }) {
     initialState
   );
 
-  async function fetchCities() {
-    dispatch({ type: "loading" });
+  useEffect(() => {
+    async function fetchCities() {
+      dispatch({ type: "loading" });
 
-    try {
-      const token = localStorage.getItem("token");
-      const { data } = await axios.get(`${URI}/api/cities`, {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      try {
+        const token = localStorage.getItem("token");
+        const { data } = await axios.get(`${URI}/api/cities`, {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        });
 
-      //console.log(data);
-      dispatch({ type: "cities/loaded", payload: data });
-    } catch (err) {
-      console.error("Error fetching cities:", err);
-      dispatch({
-        type: "rejected",
-        payload: "There was some error in loading cities...",
-      });
+        //console.log(data);
+        dispatch({ type: "cities/loaded", payload: data });
+      } catch (err) {
+        console.error("Error fetching cities:", err);
+        dispatch({
+          type: "rejected",
+          payload: "There was some error in loading cities...",
+        });
+      }
     }
-  }
+
+    fetchCities();
+  }, []);
 
   async function getCity(id) {
     if (Number(id) === currentCity._id) return;
@@ -147,14 +151,16 @@ function CitiesProvider({ children }) {
     dispatch({ type: "loading" });
     try {
       const token = localStorage.getItem("token");
-      await axios.delete(`${URI}/api/cities/${id}`, {
+      const res = await axios.delete(`${URI}/api/cities/${id}`, {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
         },
       });
+      const data = res.data;
+      //console.log(data);
 
-      dispatch({ type: "city/deleted", payload: id });
+      dispatch({ type: "city/deleted", payload: data });
     } catch {
       dispatch({
         type: "rejected",
@@ -169,7 +175,6 @@ function CitiesProvider({ children }) {
         cities,
         isLoading,
         currentCity,
-        fetchCities,
         getCity,
         createCity,
         deleteCity,

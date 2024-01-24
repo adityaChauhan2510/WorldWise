@@ -26,21 +26,20 @@ const getCity = asyncHandler(async (req, res) => {
 });
 
 const createCity = asyncHandler(async (req, res) => {
-  try{
+  try {
     const newCity = {
       _id: new mongoose.Types.ObjectId(), // Generate a new unique ObjectId for the city
       ...req.body,
     };
-    
+
     //console.log(newCity);
     req.user.cities.push(newCity);
-    
+
     await req.user.save();
     res.status(201).json(newCity);
-
-  }catch(err){
+  } catch (err) {
     console.error(err);
-    res.status(500).json({ err: 'Internal Server Error' });
+    res.status(500).json({ err: "Internal Server Error" });
   }
 });
 
@@ -51,15 +50,15 @@ const deleteCity = asyncHandler(async (req, res) => {
     const updatedCityList = await User.findOneAndUpdate(
       { _id: req.user._id },
       { $pull: { cities: { _id: cityIdToDelete } } },
-      { new: true } 
+      { new: true }
     );
-    
-    console.log(updatedCityList);
-    res.status(200).json({ message: 'City deleted successfully' });
+
+    //console.log(updatedCityList.cities);
+    res.status(200).json(updatedCityList.cities);
   } catch (err) {
     console.error(err);
-    res.status(500).json({ error: 'Internal Server Error' });
+    res.status(500).json({ error: "Internal Server Error" });
   }
-})
+});
 
 module.exports = { fetchCities, getCity, createCity, deleteCity };
